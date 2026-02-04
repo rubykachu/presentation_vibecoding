@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vibe Coding: Blueprint &amp; Mastery</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bcdee",
+                        "primary-dim": "#1a8a9f",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#111718",
+                        "surface-dark": "#1c2527",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Fira Code", "monospace"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #2bcdee1a 1px, transparent 1px), linear-gradient(to bottom, #2bcdee1a 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for terminal feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111718;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #283639;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2bcdee;
+        }
+
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(43, 205, 238, 0.5);
+        }
+        
+        .glow-box {
+            box-shadow: 0 0 15px -5px rgba(43, 205, 238, 0.3);
+            transition: all 0.3s ease;
+        }
+        .glow-box:hover {
+            box-shadow: 0 0 25px -5px rgba(43, 205, 238, 0.6);
+            border-color: #2bcdee;
+        }
+
+        /* Blueprint Grid Animation */
+        .blueprint-grid {
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Header -->
+<div class="w-full border-b border-[#283639] bg-[#111718]/90 backdrop-blur-sm sticky top-0 z-50">
+<div class="layout-container flex justify-center w-full">
+<header class="flex items-center justify-between whitespace-nowrap w-full max-w-[1280px] px-6 py-4">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">deployed_code</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">VIBE CODING</h2>
+</div>
+<div class="flex items-center gap-8 max-md:hidden">
+<nav class="flex items-center gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Manifesto</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-bold border-b-2 border-primary pb-0.5" href="#">Blueprint</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-bold border-b-2 border-primary pb-0.5" href="#">Mastery</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Community</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-5 bg-primary/10 hover:bg-primary/20 border border-primary/50 text-primary text-sm font-bold transition-all">
+<span class="truncate">Login</span>
+</button>
+</div>
+<div class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</header>
+</div>
+</div>
+<main class="flex-1 flex flex-col w-full items-center">
+<!-- SECTION 5: THE BLUEPRINT (OpenSpec) -->
+<section class="relative w-full flex flex-col items-center py-24 px-6 border-b border-[#283639] overflow-hidden">
+<!-- Blueprint Background Grid -->
+<div class="absolute inset-0 pointer-events-none blueprint-grid bg-grid-pattern opacity-30"></div>
+<div class="max-w-[1100px] w-full z-10 flex flex-col gap-12">
+<!-- Heading -->
+<div class="flex flex-col gap-4 text-center md:text-left md:flex-row md:items-end md:justify-between border-b border-primary/20 pb-8">
+<div class="flex flex-col gap-2">
+<span class="font-mono text-primary text-xs tracking-widest uppercase mb-1">Architecture v2.0.26</span>
+<h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white leading-[0.9]">
+                                OPENSPEC<span class="text-primary">.JSON</span>
+</h1>
+<p class="text-slate-400 text-lg md:text-xl max-w-2xl mt-2 font-light">
+                                The Source of Truth. A strict schema defining the entire project lifecycle.
+                            </p>
+</div>
+<div class="flex flex-col items-end max-md:items-center max-md:w-full">
+<div class="bg-surface-dark border border-[#283639] px-4 py-2 rounded flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="font-mono text-xs text-slate-300">SYSTEM: ONLINE</span>
+</div>
+</div>
+</div>
+<!-- Blueprint Visual / Schematic -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
+<!-- Left: Explanation -->
+<div class="lg:col-span-4 flex flex-col justify-center gap-6">
+<div class="flex gap-4 items-start group">
+<div class="mt-1 min-w-[32px] h-[32px] rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+<span class="material-symbols-outlined text-[18px]">data_object</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Single Source of Truth</h3>
+<p class="text-slate-400 text-sm mt-1 leading-relaxed">
+                                        OpenSpec removes ambiguity. Agents read from one immutable JSON definition, ensuring zero hallucination in project scope.
+                                    </p>
+</div>
+</div>
+<div class="flex gap-4 items-start group">
+<div class="mt-1 min-w-[32px] h-[32px] rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Context Optimized</h3>
+<p class="text-slate-400 text-sm mt-1 leading-relaxed">
+                                        Structurally designed to fit perfectly within LLM context windows, prioritizing hierarchy and dependency mapping.
+                                    </p>
+</div>
+</div>
+<div class="flex gap-4 items-start group">
+<div class="mt-1 min-w-[32px] h-[32px] rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Recursive Growth</h3>
+<p class="text-slate-400 text-sm mt-1 leading-relaxed">
+                                        The spec evolves. As agents complete tasks, they update the OpenSpec, creating a self-documenting feedback loop.
+                                    </p>
+</div>
+</div>
+<button class="mt-4 flex items-center gap-2 text-primary font-mono text-sm hover:text-white transition-colors group w-fit">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>DOWNLOAD_SCHEMA_V1.json</span>
+<div class="h-[1px] w-0 bg-primary group-hover:w-full transition-all duration-300"></div>
+</button>
+</div>
+<!-- Right: Code Visual -->
+<div class="lg:col-span-8 relative">
+<!-- Code Window -->
+<div class="bg-[#0b0e0f] border border-primary/30 rounded-lg overflow-hidden shadow-[0_0_30px_-10px_rgba(43,205,238,0.15)] relative">
+<!-- Window Header -->
+<div class="bg-[#1c2527] px-4 py-2 border-b border-[#283639] flex items-center justify-between">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+<div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+</div>
+<div class="text-xs font-mono text-slate-500">openspec.json — Read Only</div>
+<div class="w-10"></div> <!-- spacer -->
+</div>
+<!-- Code Content -->
+<div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto">
+<pre class="text-slate-300"><span class="text-primary">{</span>
+  <span class="text-[#e2b340]">"project"</span>: <span class="text-[#98c379]">"VibeCoding_Platform"</span>,
+  <span class="text-[#e2b340]">"version"</span>: <span class="text-[#98c379]">"2.0.26"</span>,
+  <span class="text-[#e2b340]">"context"</span>: <span class="text-primary">{</span>
+    <span class="text-[#e2b340]">"mission"</span>: <span class="text-[#98c379]">"Eliminate boilerplate. Enforce flow."</span>,
+    <span class="text-[#e2b340]">"tech_stack"</span>: <span class="text-primary">[</span><span class="text-[#98c379]">"Next.js"</span>, <span class="text-[#98c379]">"Tailwind"</span>, <span class="text-[#98c379]">"Supabase"</span><span class="text-primary">]</span>
+  <span class="text-primary">}</span>,
+  <span class="text-[#e2b340]">"rules"</span>: <span class="text-primary">[</span>
+    <span class="text-primary">{</span>
+      <span class="text-[#e2b340]">"id"</span>: <span class="text-[#98c379]">"R-01"</span>,
+      <span class="text-[#e2b340]">"principle"</span>: <span class="text-[#98c379]">"DRY"</span>,
+      <span class="text-[#e2b340]">"enforcement"</span>: <span class="text-[#d19a66]">true</span>
+    <span class="text-primary">}</span>,
+    <span class="text-primary">{</span>
+      <span class="text-[#e2b340]">"id"</span>: <span class="text-[#98c379]">"R-02"</span>,
+      <span class="text-[#e2b340]">"principle"</span>: <span class="text-[#98c379]">"ATOMIC_COMMITS"</span>,
+      <span class="text-[#e2b340]">"max_lines"</span>: <span class="text-[#d19a66]">50</span>
+    <span class="text-primary">}</span>
+  <span class="text-primary">]</span>,
+  <span class="text-[#e2b340]">"status"</span>: <span class="text-[#98c379]">"OPTIMIZED"</span>
+<span class="text-primary">}</span>
+</pre>
+</div>
+<!-- Overlay Grid Lines on Code -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(43,205,238,0.03)_1px,transparent_1px)] bg-[size:100%_2rem] pointer-events-none"></div>
+</div>
+<!-- Connecting Lines Decoration -->
+<div class="absolute -left-6 top-20 w-6 h-[1px] bg-primary/40 hidden lg:block"></div>
+<div class="absolute -left-6 top-20 w-1 h-1 bg-primary rounded-full hidden lg:block"></div>
+<div class="absolute -right-4 bottom-10 w-4 h-[1px] bg-primary/40 hidden lg:block"></div>
+<div class="absolute -right-8 bottom-10 text-[10px] font-mono text-primary hidden lg:block rotate-90 origin-left">VALIDATED</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: MASTERY (Agent Rules) -->
+<section class="w-full flex flex-col items-center py-24 px-6 bg-[#0f1314] relative">
+<div class="max-w-[1100px] w-full z-10 flex flex-col gap-16">
+<!-- Headline -->
+<div class="flex flex-col items-center gap-3">
+<span class="font-mono text-primary/70 text-sm tracking-[0.2em] uppercase bg-primary/5 px-3 py-1 rounded border border-primary/20">Protocol Enforcement</span>
+<h2 class="text-white tracking-tight text-4xl md:text-5xl font-black text-center glow-text">
+                            AGENT RULES <span class="text-slate-600 px-2">//</span> MASTERY
+                        </h2>
+<p class="text-slate-400 text-center max-w-lg">
+                            To achieve Vibe Coding mastery, all autonomous agents must adhere to the Core Directives.
+                        </p>
+</div>
+<!-- Terminal Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Rule 1: DRY -->
+<div class="group flex flex-col bg-surface-dark border border-[#3b4f54] hover:border-primary rounded-lg overflow-hidden glow-box h-full">
+<div class="bg-[#151b1d] px-3 py-2 border-b border-[#283639] flex justify-between items-center">
+<span class="font-mono text-[10px] text-slate-500">~/rules/dry.js</span>
+<div class="w-2 h-2 rounded-full bg-slate-700 group-hover:bg-primary transition-colors"></div>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-1">
+<div class="text-primary" data-alt="Icon representing terminal code">
+<span class="material-symbols-outlined text-[32px]">terminal</span>
+</div>
+<div>
+<h3 class="text-white text-lg font-bold font-mono mb-1">&gt; DRY_PRINCIPLE</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                        Strict adherence. If logic is repeated, abstract it. Agents must detect redundancy before commit.
+                                    </p>
+</div>
+<div class="mt-auto pt-4 border-t border-white/5">
+<code class="text-xs font-mono text-primary/70">ERR: DUPLICATE_FOUND</code>
+</div>
+</div>
+</div>
+<!-- Rule 2: Anti-Fat Code -->
+<div class="group flex flex-col bg-surface-dark border border-[#3b4f54] hover:border-primary rounded-lg overflow-hidden glow-box h-full">
+<div class="bg-[#151b1d] px-3 py-2 border-b border-[#283639] flex justify-between items-center">
+<span class="font-mono text-[10px] text-slate-500">~/rules/lean.py</span>
+<div class="w-2 h-2 rounded-full bg-slate-700 group-hover:bg-primary transition-colors"></div>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-1">
+<div class="text-primary" data-alt="Icon representing code optimization">
+<span class="material-symbols-outlined text-[32px]">content_cut</span>
+</div>
+<div>
+<h3 class="text-white text-lg font-bold font-mono mb-1">&gt; ANTI_FAT_CODE</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                        Lean functions only. Maximum 20 lines per function. Complexity kills the vibe.
+                                    </p>
+</div>
+<div class="mt-auto pt-4 border-t border-white/5">
+<code class="text-xs font-mono text-primary/70">WARN: FUNC_TOO_LARGE</code>
+</div>
+</div>
+</div>
+<!-- Rule 3: Atomic Commits -->
+<div class="group flex flex-col bg-surface-dark border border-[#3b4f54] hover:border-primary rounded-lg overflow-hidden glow-box h-full">
+<div class="bg-[#151b1d] px-3 py-2 border-b border-[#283639] flex justify-between items-center">
+<span class="font-mono text-[10px] text-slate-500">~/git/history.log</span>
+<div class="w-2 h-2 rounded-full bg-slate-700 group-hover:bg-primary transition-colors"></div>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-1">
+<div class="text-primary" data-alt="Icon representing git commits">
+<span class="material-symbols-outlined text-[32px]">commit</span>
+</div>
+<div>
+<h3 class="text-white text-lg font-bold font-mono mb-1">&gt; ATOMIC_COMMITS</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                        Traceable history. One feature, one commit. Semantic messaging required for all agents.
+                                    </p>
+</div>
+<div class="mt-auto pt-4 border-t border-white/5">
+<code class="text-xs font-mono text-primary/70">GIT: STAGING...</code>
+</div>
+</div>
+</div>
+<!-- Rule 4: Pure Functions -->
+<div class="group flex flex-col bg-surface-dark border border-[#3b4f54] hover:border-primary rounded-lg overflow-hidden glow-box h-full">
+<div class="bg-[#151b1d] px-3 py-2 border-b border-[#283639] flex justify-between items-center">
+<span class="font-mono text-[10px] text-slate-500">~/core/pure.ts</span>
+<div class="w-2 h-2 rounded-full bg-slate-700 group-hover:bg-primary transition-colors"></div>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-1">
+<div class="text-primary" data-alt="Icon representing functions">
+<span class="material-symbols-outlined text-[32px]">functions</span>
+</div>
+<div>
+<h3 class="text-white text-lg font-bold font-mono mb-1">&gt; NO_SIDE_EFFECTS</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                        Deterministic outputs. Pure functions ensure testability and prevent state leakage.
+                                    </p>
+</div>
+<div class="mt-auto pt-4 border-t border-white/5">
+<code class="text-xs font-mono text-primary/70">TEST: PASSED</code>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER: Q&A CTA -->
+<section class="w-full flex justify-center py-20 pb-32 px-6 bg-background-dark relative border-t border-[#283639]">
+<!-- Ambient glow behind button -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="flex flex-col items-center gap-8 w-full max-w-4xl relative z-10">
+<div class="flex items-center gap-2 text-primary font-mono text-sm">
+<span class="cursor-blink">_</span> READY_TO_DEPLOY?
+                    </div>
+<button class="group relative w-full max-w-[500px] h-20 bg-transparent overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+<!-- Button Glow Background -->
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="absolute inset-0 shadow-[0_0_30px_-5px_#2bcdee] opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+<!-- Button Borders -->
+<div class="absolute inset-0 border-2 border-primary rounded-xl"></div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-white shadow-[0_0_10px_#fff]"></div>
+<!-- Content -->
+<div class="relative h-full flex items-center justify-between px-8 text-primary group-hover:text-white transition-colors">
+<div class="flex flex-col items-start">
+<span class="font-bold text-2xl tracking-widest">INITIATE Q&amp;A</span>
+<span class="text-[10px] font-mono opacity-70">EXECUTE PROTOCOL 77</span>
+</div>
+<span class="material-symbols-outlined text-[40px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</button>
+<p class="text-slate-500 text-sm max-w-md text-center">
+                        Join the Vibe Coding architecture review. We are live every Tuesday.
+                    </p>
+</div>
+</section>
+</main>
+</div>
+</body></html>
