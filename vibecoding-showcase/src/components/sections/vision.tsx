@@ -63,6 +63,7 @@ export function VisionSection() {
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         className="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] bg-purple-600/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none -z-10"
+        style={{ willChange: "transform" }}
       />
       <motion.div
         animate={{
@@ -71,6 +72,7 @@ export function VisionSection() {
         }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-blue-600/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none -z-10"
+        style={{ willChange: "transform" }}
       />
 
       {/* 2. Neural Synapses (Connecting Lines) */}
@@ -116,6 +118,7 @@ export function VisionSection() {
               repeat: Infinity,
               delay: node.delay
             }}
+            style={{ willChange: "transform, opacity" }}
           />
         ))}
       </svg>
@@ -171,14 +174,15 @@ export function VisionSection() {
           {uiVariants.map((variant, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.15 }}
+              transition={{ delay: idx * 0.1, duration: 0.4 }}
               className={`group relative flex flex-col rounded-xl overflow-hidden border h-[400px] ${variant.isMain
                 ? "border-[#9d2bee]/50 bg-[#2a1e35] shadow-[0_0_30px_rgba(157,43,238,0.15)] md:-translate-y-4"
                 : "border-white/5 bg-[#2a1e35] opacity-70 hover:opacity-100"
                 } transition-all duration-300`}
+              style={{ willChange: "opacity, transform" }}
             >
               {/* Card Header */}
               <div className="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">

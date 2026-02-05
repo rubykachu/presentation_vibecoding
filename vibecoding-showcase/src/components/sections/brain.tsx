@@ -17,6 +17,16 @@ const dataParticles = [
 function StarField() {
   const [mounted, setMounted] = useState(false);
 
+  // Memoize random values to avoid recalculation on re-renders
+  const stars = useState(() =>
+    [...Array(20)].map(() => ({
+      x: (Math.random() - 0.5) * 1000,
+      y: (Math.random() - 0.5) * 800,
+      duration: Math.random() * 2 + 1,
+      delay: Math.random() * 2
+    }))
+  )[0];
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -25,23 +35,24 @@ function StarField() {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(20)].map((_, i) => (
+      {stars.map((star, i) => (
         <motion.div
           key={`star-${i}`}
           className="absolute top-1/2 left-1/2 w-1 h-1 bg-white rounded-full"
           initial={{ opacity: 0, x: 0, y: 0, scale: 0 }}
           animate={{
             opacity: [0, 1, 0],
-            x: (Math.random() - 0.5) * 1000,
-            y: (Math.random() - 0.5) * 800,
+            x: star.x,
+            y: star.y,
             scale: [0, 2]
           }}
           transition={{
-            duration: Math.random() * 2 + 1,
+            duration: star.duration,
             repeat: Infinity,
             ease: "linear",
-            delay: Math.random() * 2
+            delay: star.delay
           }}
+          style={{ willChange: "transform, opacity" }}
         />
       ))}
     </div>

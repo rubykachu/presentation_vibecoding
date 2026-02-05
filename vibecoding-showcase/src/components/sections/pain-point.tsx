@@ -67,17 +67,19 @@ function ChatBubble({
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className={`absolute max-w-[280px] md:max-w-[320px] p-6 border rounded-2xl text-lg md:text-xl font-medium z-20 ${variantStyles[variant]} ${style}`}
+      style={{ willChange: "transform, opacity" }}
     >
       <motion.div
         animate={{
-          y: [0, -8, 0], // Reduced movement range (gentler)
-          rotate: [0, 1, -1, 0], // Reduced rotation range (gentler)
+          y: [0, -8, 0],
+          rotate: [0, 1, -1, 0],
         }}
         transition={{
           duration: floatDuration,
           repeat: Infinity,
           ease: "easeInOut",
         }}
+        style={{ willChange: "transform" }}
       >
         {text}
       </motion.div>

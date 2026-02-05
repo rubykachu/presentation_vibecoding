@@ -4,39 +4,45 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { GlowCard, GlowCardContent, GlowCardHeader } from "@/components/ui/glow-card";
-import { Terminal, Scissors, GitCommit, FunctionSquare, ArrowRight, MousePointer2 } from "lucide-react";
+import { Terminal, Scissors, GitCommit, FunctionSquare, ArrowRight, MousePointer2, ShieldCheck, Zap } from "lucide-react";
 import React, { useRef } from "react";
 
 const agentRules = [
   {
-    icon: Terminal,
-    title: "DRY_PRINCIPLE",
-    description: "Tuân thủ nghiêm ngặt. Nếu logic lặp lại, abstract nó. Agent phát hiện duplicated logic.",
-    code: "ERR: DUPLICATE_FOUND",
-    file: "~/rules/dry.js",
-  },
-  {
-    icon: Scissors,
-    title: "ANTI_FAT_CODE",
-    description: "Chỉ hàm gọn nhẹ. Tối đa 20 dòng. Sự phức tạp giết chết vibe.",
-    code: "WARN: FUNC_TOO_LARGE",
-    file: "~/rules/lean.py",
-  },
-  {
-    icon: GitCommit,
-    title: "ATOMIC_COMMITS",
-    description: "Lịch sử truy vết. Một tính năng, một commit. Semantic messaging bắt buộc.",
-    code: "GIT: STAGING...",
-    file: "~/git/history.log",
-  },
-  {
     icon: FunctionSquare,
-    title: "NO_SIDE_EFFECTS",
-    description: "Output xác định. Hàm thuần khiết đảm bảo testability.",
-    code: "TEST: PASSED",
-    file: "~/core/pure.ts",
+    title: "PROJECT_CONTEXT",
+    description: "Am hiểu toàn bộ cấu trúc. Đặt file đúng chỗ, import đúng luồng, không 'phá vỡ' kiến trúc cũ.",
+    code: "CTX: LOADED 100%",
+    file: "~/core/structure.map",
+  },
+  {
+    icon: Terminal,
+    title: "STRICT_CONVENTION",
+    description: "Thống nhất tuyệt đối. Từ naming rules đến code pattern. 10 lập trình viên code như 1.",
+    code: "LINT: PASSED",
+    file: "~/rules/style.guide",
+  },
+  {
+    icon: ShieldCheck,
+    title: "SECURITY_GUARD",
+    description: "Bảo mật từ trong trứng. Validate input, sanitize data, check quyền trước khi execute.",
+    code: "SEC: SECURE",
+    file: "~/middleware/auth.ts",
+  },
+  {
+    icon: Zap,
+    title: "PERFORMANCE_OP",
+    description: "Tối ưu từng miligiây. Query tinh gọn, lazy loading chuẩn chỉ, caching thông minh.",
+    code: "PERF: 99/100",
+    file: "~/lib/cache.redis",
   },
 ];
+
+// ... inside the component return ...
+
+<p className="text-slate-400 text-lg md:text-xl max-w-2xl mt-2 font-light leading-relaxed">
+  Làm sao để AI viết code không chỉ "chạy được" mà còn phải <span className="text-[#2bcdee] font-semibold">chuẩn convention, đồng bộ style</span> và tối ưu như Senior Dev?
+</p>
 
 function TiltCard({ rule, index }: { rule: typeof agentRules[0], index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -207,11 +213,14 @@ export function MasterySection() {
         >
           <div className="flex items-center gap-2 text-[#2bcdee] font-mono text-sm tracking-[0.3em] uppercase opacity-70">
             <MousePointer2 className="w-4 h-4" />
-            <span>Interactive Protocol</span>
+            <span>SKILL_SET: DEFINED</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">
-            MASTER THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2bcdee] to-[#9d2bee]">VIBE</span>
+            MASTER THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2bcdee] to-[#9d2bee]">SKILLS</span>
           </h2>
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mt-2 font-light leading-relaxed">
+            Làm sao để AI viết code không chỉ "chạy được" mà còn phải <span className="text-[#2bcdee] font-semibold">chuẩn convention, đồng bộ style</span> và tối ưu như Senior Dev?
+          </p>
         </motion.div>
 
         {/* 3D Tilt Grid */}
