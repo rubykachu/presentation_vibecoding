@@ -244,7 +244,7 @@ export function MasterySection() {
             className="border border-[#2bcdee]/30 hover:bg-[#2bcdee]/10 text-[#2bcdee] font-mono gap-2 group px-8 py-6 h-auto text-lg inline-flex items-center justify-center rounded-md transition-colors"
           >
             <Github className="w-5 h-5 mr-2" />
-            INITIATE_DEPLOYMENT <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            ANTIGRAVITY_AWESOME_SKILLS <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
 
