@@ -2,7 +2,7 @@
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { NeonText } from "@/components/ui/neon-text";
-import { FileText, Palette, ScrollText, BrainCircuit, Terminal, Zap, ShieldCheck, Repeat, ArrowRight } from "lucide-react";
+import { FileText, Palette, ScrollText, BrainCircuit, Terminal, Zap, ShieldCheck, Repeat, ArrowRight, RefreshCw } from "lucide-react";
 import { useCallback, useEffect } from "react";
 
 const steps = [
@@ -100,13 +100,19 @@ export function SummarySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "circOut" }}
           >
-            <NeonText
-              as="h1"
-              glow
-              className="text-6xl md:text-8xl font-black tracking-tighter mb-4"
-            >
-              THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d2bee] to-[#2bcdee]">FORMULA</span>
-            </NeonText>
+            <a href="/" className="group relative inline-block cursor-pointer">
+              <NeonText
+                as="h1"
+                glow
+                className="text-6xl md:text-8xl font-black tracking-tighter mb-4"
+              >
+                THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d2bee] to-[#2bcdee]">FORMULA</span>
+              </NeonText>
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-[#2bcdee] text-xs font-mono tracking-widest whitespace-nowrap">
+                <RefreshCw className="w-3 h-3" />
+                <span>REPLAY_SESSION</span>
+              </div>
+            </a>
           </motion.div>
 
           <motion.div

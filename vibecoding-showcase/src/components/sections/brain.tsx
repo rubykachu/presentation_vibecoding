@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { NeonText } from "@/components/ui/neon-text";
-import { Code, History, BookOpen, Database, FileCode, Layers, Cpu, Zap } from "lucide-react";
+import { Code, History, BookOpen, Database, FileCode, Layers, Cpu, Zap, Sparkles } from "lucide-react";
 
 // Floating data particles
 const dataParticles = [
@@ -87,6 +87,16 @@ export function BrainSection() {
           >
             GEMINI 3.0 PRO
           </NeonText>
+          <a
+            href="https://gemini.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-mono text-slate-400 hover:text-[#9d2bee] transition-colors mt-2 mb-2 uppercase tracking-wider group w-fit"
+          >
+            <Sparkles className="w-4 h-4 group-hover:text-white transition-colors" />
+            <span>gemini.google.com</span>
+            <div className="h-[1px] w-0 bg-[#9d2bee] group-hover:w-full transition-all duration-300 pointer-events-none" />
+          </a>
           <p className="text-slate-300 max-w-[800px] text-xl md:text-2xl mt-4 font-light">
             Thấu hiểu toàn diện kiến trúc, duy trì ngữ cảnh tuyệt đối. Khi dữ liệu trở thành bản năng, bằng chính tư duy và phong cách của bạn.
           </p>

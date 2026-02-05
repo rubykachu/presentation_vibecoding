@@ -4,7 +4,7 @@ import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 import { Card, CardHeader, TerminalDots } from "@/components/ui/card";
-import { Database, Cpu, GitBranch, Download, XCircle, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Database, Cpu, GitBranch, Download, XCircle, CheckCircle2, AlertTriangle, Github } from "lucide-react";
 import { NeonText } from "@/components/ui/neon-text";
 
 // JSON content for typewriter effect
@@ -207,9 +207,18 @@ export function BlueprintSection() {
             >
               OPENSPEC<span className="text-[#2bcdee]">.JSON</span>
             </NeonText>
+            <a
+              href="https://github.com/Fission-AI/OpenSpec"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-mono text-slate-400 hover:text-[#2bcdee] transition-colors mt-1 mb-1 uppercase tracking-wider group w-fit"
+            >
+              <Github className="w-5 h-5 group-hover:text-white transition-colors" />
+              <span>Fission-AI/OpenSpec</span>
+              <div className="h-[1px] w-0 bg-[#2bcdee] group-hover:w-full transition-all duration-300 pointer-events-none" />
+            </a>
             <p className="text-slate-300 text-lg md:text-2xl max-w-2xl mt-2 font-light">
-              Nguồn sự thật duy nhất. Schema nghiêm ngặt định nghĩa toàn bộ
-              vòng đời dự án.
+              Schema nghiêm ngặt định nghĩa toàn bộ spec dự án.
             </p>
           </div>
           <div className="flex flex-col items-end max-md:items-center max-md:w-full">

@@ -140,9 +140,22 @@ export function VisionSection() {
             >
               STITCH INTERFACE
             </NeonText>
+            <a
+              href="https://stitch.withgoogle.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-mono text-slate-400 hover:text-[#2bcdee] transition-colors mt-1 mb-2 uppercase tracking-wider group w-fit"
+            >
+              {/* Stylized Google G Logo */}
+              <svg className="w-5 h-5 fill-current group-hover:text-white transition-colors" viewBox="0 0 24 24">
+                <path d="M12.0003 20.45C7.29177 20.45 3.51538 16.6312 3.51538 11.9688C3.51538 7.30625 7.29177 3.4875 12.0003 3.4875C14.2866 3.4875 16.2736 4.3125 17.8091 5.75625L15.3341 8.2125C14.7154 7.63125 13.6283 6.9 12.0003 6.9C9.25538 6.9 6.97488 9.16875 6.97488 11.9688C6.97488 14.7687 9.25538 17.0375 12.0003 17.0375C15.2104 17.0375 16.4061 14.8313 16.6124 13.0688H12.0003V9.84375H19.9599C20.0836 10.425 20.1455 11.0063 20.1455 11.6687C20.1455 16.6313 16.7981 20.45 12.0003 20.45Z" />
+              </svg>
+              <span>stitch.withgoogle.com</span>
+              <div className="h-[1px] w-0 bg-[#2bcdee] group-hover:w-full transition-all duration-300 transform origin-left" />
+            </a>
             <p className="text-slate-300 text-xl md:text-2xl font-light">
               Code theo tốc độ của suy nghĩ. Khoanh tròn, prompt và tinh chỉnh
-              UI variant trong vài mili-giây.
+              UI variant trong vài giây.
             </p>
           </div>
 

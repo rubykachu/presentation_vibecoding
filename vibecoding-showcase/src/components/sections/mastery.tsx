@@ -4,7 +4,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { GlowCard, GlowCardContent, GlowCardHeader } from "@/components/ui/glow-card";
-import { Terminal, Scissors, GitCommit, FunctionSquare, ArrowRight, MousePointer2, ShieldCheck, Zap } from "lucide-react";
+import { Terminal, Scissors, GitCommit, FunctionSquare, ArrowRight, MousePointer2, ShieldCheck, Zap, Github } from "lucide-react";
 import React, { useRef } from "react";
 
 const agentRules = [
@@ -237,9 +237,15 @@ export function MasterySection() {
 
         {/* Main CTA */}
         <div className="pt-12 pb-16">
-          <Button variant="ghost" className="border border-[#2bcdee]/30 hover:bg-[#2bcdee]/10 text-[#2bcdee] font-mono gap-2 group px-8 py-6 h-auto text-lg">
+          <a
+            href="https://github.com/sickn33/antigravity-awesome-skills"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-[#2bcdee]/30 hover:bg-[#2bcdee]/10 text-[#2bcdee] font-mono gap-2 group px-8 py-6 h-auto text-lg inline-flex items-center justify-center rounded-md transition-colors"
+          >
+            <Github className="w-5 h-5 mr-2" />
             INITIATE_DEPLOYMENT <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          </a>
         </div>
 
         {/* Operational Console (Filling Space) */}
