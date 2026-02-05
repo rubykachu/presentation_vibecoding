@@ -2,6 +2,7 @@
 
 import { usePresentation } from "@/hooks/use-presentation";
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronUp, ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 
@@ -78,11 +79,11 @@ export default function Home() {
       </div>
 
       {/* Keyboard hint */}
-      <div className="fixed bottom-6 left-6 z-50 font-mono text-[10px] text-white/30 max-md:hidden flex items-center gap-2">
-        <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5">↑</kbd>
-        <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5">↓</kbd>
+      <div className="fixed bottom-6 left-6 z-50 font-sans text-[10px] font-medium text-white/40 max-md:hidden flex items-center gap-2">
+        <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 font-mono">↑</kbd>
+        <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 font-mono">↓</kbd>
         <span>hoặc</span>
-        <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5">Space</kbd>
+        <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 font-mono">Space</kbd>
         <span>để điều hướng</span>
       </div>
 
@@ -98,6 +99,32 @@ export default function Home() {
           <CurrentSection />
         </motion.div>
       </AnimatePresence>
+
+      {/* Mobile Navigation Controls */}
+      <div className="fixed bottom-6 right-6 z-50 md:hidden flex flex-col gap-3">
+        <button
+          onClick={() => goToSection(Math.max(0, currentIndex - 1))}
+          disabled={currentIndex === 0}
+          className={`p-3 rounded-full backdrop-blur-md border transition-all ${currentIndex === 0
+            ? "bg-white/5 border-white/10 text-white/20 cursor-not-allowed"
+            : "bg-[#1c2527]/80 border-[#9d2bee]/50 text-[#9d2bee] shadow-[0_0_15px_rgba(157,43,238,0.3)] active:scale-95 hover:bg-[#9d2bee]/20"
+            }`}
+          aria-label="Previous Section"
+        >
+          <ChevronUp className="w-6 h-6" />
+        </button>
+        <button
+          onClick={() => goToSection(Math.min(totalSections - 1, currentIndex + 1))}
+          disabled={currentIndex === totalSections - 1}
+          className={`p-3 rounded-full backdrop-blur-md border transition-all ${currentIndex === totalSections - 1
+            ? "bg-white/5 border-white/10 text-white/20 cursor-not-allowed"
+            : "bg-[#1c2527]/80 border-[#9d2bee]/50 text-[#9d2bee] shadow-[0_0_15px_rgba(157,43,238,0.3)] active:scale-95 hover:bg-[#9d2bee]/20"
+            }`}
+          aria-label="Next Section"
+        >
+          <ChevronDown className="w-6 h-6" />
+        </button>
+      </div>
     </main>
   );
 }

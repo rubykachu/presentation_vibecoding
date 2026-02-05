@@ -25,7 +25,7 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "VIBE CODING 2026 | Coding by Intent, Not Syntax",
+  title: "VIBE CODING 2026 | TANG QUOC MINH | Coding by Intent, Not Syntax",
   description:
     "Transforming vague AI prompts into engineering precision via a structured design review process. A presentation on the future of software development.",
   keywords: ["Vibe Coding", "AI", "OpenSpec", "Gemini", "Software Development"],

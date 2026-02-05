@@ -210,7 +210,9 @@ export function PainPointSection() {
           <p className="text-2xl md:text-3xl text-gray-300 leading-relaxed max-w-xl font-light">
             Dựa vào prompt ngẫu nhiên là công thức của thảm họa.
             <br />
-            Ngừng đánh cược với codebase. <span className="text-[#2bcdee] font-semibold">Kỹ thuật</span> cần sự chính xác, không phải may rủi.
+            Ngừng đánh cược với codebase.
+            <br />
+            <span className="text-[#2bcdee] font-semibold">Kỹ thuật</span> cần sự chính xác, không phải may rủi.
           </p>
 
           <div className="flex items-center gap-4">

@@ -40,9 +40,6 @@ const agentRules = [
 
 // ... inside the component return ...
 
-<p className="text-slate-400 text-lg md:text-xl max-w-2xl mt-2 font-light leading-relaxed">
-  Làm sao để AI viết code không chỉ "chạy được" mà còn phải <span className="text-[#2bcdee] font-semibold">chuẩn convention, đồng bộ style</span> và tối ưu như Senior Dev?
-</p>
 
 function TiltCard({ rule, index }: { rule: typeof agentRules[0], index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -219,7 +216,9 @@ export function MasterySection() {
             MASTER THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2bcdee] to-[#9d2bee]">SKILLS</span>
           </h2>
           <p className="text-slate-400 text-lg md:text-xl max-w-2xl mt-2 font-light leading-relaxed">
-            Làm sao để AI viết code không chỉ "chạy được" mà còn phải <span className="text-[#2bcdee] font-semibold">chuẩn convention, đồng bộ style</span> và tối ưu như Senior Dev?
+            Làm sao để AI viết code không chỉ "chạy được" mà còn phải
+            <br />
+            <span className="text-[#2bcdee] font-semibold">chuẩn convention, đồng bộ style</span> và tối ưu như Senior ?
           </p>
         </motion.div>
 
